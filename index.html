@@ -1,0 +1,649 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<style>
+body {
+  margin:0;
+  padding:0;
+  font-family:微軟正黑體;
+  position:relative;
+}
+#top {
+  height:100px;
+  background-color:#222;
+}
+.uns {
+   -webkit-user-select: none;
+   -moz-user-select: none; 
+   cursor:pointer;
+}
+#d1 {
+  width:1000px;
+  margin:0 auto;
+  margin-top:20px;
+}
+#d1:after{
+content:"";
+display: block;
+clear: both;
+}
+.card-d {
+  min-height:30px;
+  padding:20px 50px 20px 50px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 0 5px #222;
+  margin:0 20px 20px 0;  
+  position:relative;
+}
+.card-no {
+  font-size:25px;
+  position:absolute;
+  top:5px;
+  left:10px;
+}
+.card-en {
+  font-size:30px;
+  margin:0 10px 0 0;
+  float:left;
+}
+.card-kk {
+  line-height:40px;
+  font-size:18px;
+  color:#888;
+  float:left;
+  margin:0 10px 0 0;
+}
+.card-cn {
+  font-size:30px;
+  float:left;
+}
+.card-mark {
+  width:40px;
+  height:40px;
+  text-align:center;
+  border-radius:100%;
+  background-color:#222;
+  position:absolute; 
+  bottom:5px;
+  right:5px;
+}
+.card-x {
+  font-size:20px;
+  color:#222;
+  position:absolute; 
+  top:5px;
+  right:16px;
+}
+.card-x:hover {
+  color:#f00;
+}
+.c {
+  font-size:28px;
+  line-height:40px;
+  color:#fff;
+}
+.card-mark:hover {
+  box-shadow:0 0 5px #222;
+}
+.state1 {
+  color:#66FF66;
+}
+.state2 {
+  color:#ff0;
+}
+#foo {
+  height:100px;
+  background-color:#222;
+}
+#mu {
+  width:1000px;
+  height:100px;
+  margin:0 auto;
+}
+.mu-d {
+  width:166px;
+  height:100px; 
+  line-height:100px; 
+  text-align:center;
+  float:left;
+  font-size:20px;
+  color:#fff;
+}
+.on {
+  background-color:#eee;
+  color:#000;
+}
+.mu-d:hover {
+  background-color:#fff;
+  color:#000;
+}
+#add {
+  display:none;
+  margin:0 0 30px 0;
+}
+.add-d {
+  padding:20px 0;
+  margin:0 0 10px 0;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  text-align:center;
+  position:relative;
+}
+.add-d-no {
+  font-size:30px;
+  float:left;
+  position:absolute; 
+  top:-5px;
+  left:-20px;
+}
+input {
+  width:300px;
+  padding:10px;
+  margin:0 20px 0 0;
+  font-size:30px;
+  border-radius:10px;
+  font-family:微軟正黑體;
+}
+#add-d-mu {
+  width:440px;
+  margin:0 auto;
+  overflow:hidden;
+}
+.add-d-mu-b {
+  width:200px;
+  margin:0 auto;
+  padding:10px 0;
+  margin:0 20px 0 0;
+  border-radius:10px;
+  font-size:25px;
+  text-align:center;
+  background-color:#222;
+  color:#fff;
+  float:left;
+}
+.add-d-mu-b:hover {
+  background-color:#aaa;
+  color:#000;
+}
+#se {
+  padding:10px 0;
+  background-color:#eee;
+  position:sticky;
+  top:0;
+  left:0;
+  z-index:2;
+}
+#se-d {
+  width:1000px;
+  margin:0 auto;
+}
+#se-d input {
+  padding:5px;
+  font-size:25px;
+  display:inline-block;
+}
+#card-num {
+  font-size:25px;
+  display:inline-block;
+}
+
+@media (max-width: 1000px) {
+body {
+
+}
+#top {
+  height:100px;
+}
+#mu {
+  width:100%;
+}
+.mu-d {
+  font-size:30px;
+}
+#se-d {
+  width:100%;
+}
+.mu-d {
+  width:16%;
+}
+#d1 {
+  width:100%;
+  margin-top:20px;
+}
+#card {
+  padding:0 10px;
+}
+.card-d {
+  width:100%;
+  padding:50px 0;
+  margin:0 0 10px 0;
+}
+.card-no {
+  font-size:50px;
+}
+.card-en {
+  font-size:70px;
+  margin:0 0 0 60px;
+}
+.card-cn {
+  font-size:70px;
+  margin:0 0 0 50px;
+}
+.card-kk {
+  line-height:90px;
+  font-size:40px;
+  margin:0 0 0 50px;
+}
+.card-x {
+  right:20px;
+  font-size:60px;
+}
+.card-mark {
+  width:80px;
+  height:80px;
+}
+.c {
+  font-size:60px;
+  line-height: 80px;
+}
+}
+#card-num div{
+  line-height:20px;
+  float:left;
+  margin:0 30px 0 0;
+}
+#card-num div:hover{
+  text-decoration:underline;
+}
+#uord {
+  width:500px;
+  background-color:#fff;
+  position:fixed;
+  top:10%;
+  left:50%;
+  z-index:99;
+  margin:0 0 0 -250px;
+  border-radius:10px;
+  box-shadow:0 0 10px #222;
+  display:none;
+}
+#uord-d {
+  padding:20px;
+}
+.uord-d-b {
+  padding:20px 0;
+  margin:0 0 10px 0;
+  text-align:center;
+  background-color:#222;
+  color:#fff;
+  border-radius:10px;
+  font-size:25px;
+}
+.uord-d-b:hover {
+  background-color:#888;
+  color:#222;
+}
+#uord-text {
+  padding:0 20px 20px 20px;
+  text-align:center;
+  font-size:25px;
+  display:none;
+}
+.b1 {
+  width:300px;
+  margin:0 auto;
+  margin-top:10px;
+}
+#upfile {
+  display:none;
+}
+#black {
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:98;  
+  display:none;
+}
+</style>
+</head>
+<body>
+<div id="black" onclick=open_uord(0)></div>
+<div id="uord">
+  <div id="uord-d">
+    <div class="uord-d-b uns" onclick=document.querySelectorAll("#upfile")[0].click();>上傳單字庫</div>
+	<div class="uord-d-b uns" onclick=download()>下載單字庫</div>
+	<input type="file" id="upfile" onchange=upload()>
+  </div>
+  <div id="uord-text">
+  <div id="uord-text-d">找到1000個單字，確定請按下加入。</div>
+  <div class="uord-d-b uns b1" onclick=uptolo()>加入</div>
+  </div>
+</div>
+<div id="main">
+  <div id="top">
+    <div id="mu">
+	  <div class="mu-d uns" onclick=all_card()>全部單字</div>
+	  <div class="mu-d uns" onclick=ok_card(1)>正在背的單字</div>
+	  <div class="mu-d uns" onclick=ok_card(2)>已背熟的單字</div>
+	  <div class="mu-d uns" onclick=add_show(1)>增加單字</div>
+	  <div class="mu-d uns" onclick=open_uord(1)>上傳/下載單字庫</div>
+      <div class="mu-d uns" onclick=data_de()>字庫初始化</div>
+	</div>
+  </div>
+  <div id="se">
+    <div id="se-d">
+	  <input type="text" id="se-v" placeholder="搜尋單字(英文)" onchange=se_card(this.value)>
+	  <div id="card-num">全部單字:0&nbsp;正在背的單字:0&nbsp;已背熟的單字:0</div>
+	</div>
+  </div>
+  <div id="d1">
+    <div id="card">
+	  <div class="card-d">
+	    <div class="card-no">1</div>
+	    <div class="card-en">Apple</div>
+	    <div class="card-kk">/ˈæp.əl/</div>
+	    <div class="card-cn">蘋果</div>
+	    <div class="card-mark"><i class="fa fa-star c" aria-hidden="true"></i></div>
+	  </div>
+	</div>
+	<div id="add">
+	  <div id="add-d">
+	    <div class="add-d">
+	      <div class="add-d-no">1.</div>
+	      <input type="text" class="en-v" placeholder="單字英文"/>
+		  <input type="text" class="cn-v" placeholder="單字中文"/>
+		  <input type="text" class="kk-v" placeholder="單字英標"/>
+	      <i class='fa fa-close card-x' onclick=add_de(this)></i>
+		</div>
+	  </div>
+	  <div id="add-d-mu">
+	    <div class="add-d-mu-b uns" onclick=add_more()>再追加</div>
+		<div class="add-d-mu-b uns" onclick=add_ok()>確定</div>
+	  </div>
+	</div>
+  </div>
+  <div id="foo"></div>
+</div>
+</body>
+<script src="card.js"></script>
+<script>
+var upfile="";
+var gs=0;
+var mud=document.querySelectorAll(".mu-d");
+
+if(!localStorage.getItem("user_card")) {
+  localStorage.setItem("user_card",JSON.stringify(obj));
+  var user_card=JSON.parse(localStorage.getItem("user_card"));
+  all_card();
+  card_num();
+}
+else {
+  var user_card=JSON.parse(localStorage.getItem("user_card"));
+}
+
+function data_de(){  //初始化單字庫
+  localStorage.setItem("user_card",JSON.stringify(obj));
+  user_card=JSON.parse(localStorage.getItem("user_card"));
+  all_card();
+  card_num();
+  save();
+}
+
+function card_num() {  //統計單字
+  var arr=[0,0,0];
+  for(let i in user_card.card) {
+	arr[0]++;
+	if(user_card.card[i].state==1) {
+	  arr[1]++;
+	}
+	else if(user_card.card[i].state==2) {
+	  arr[2]++;
+	}
+  }
+  document.querySelectorAll("#card-num")[0].innerHTML="<div class='uns' onclick=mud[0].click();>全部單字:"+arr[0]+"</div><div class='uns' onclick=mud[1].click();>正在背的單字:"+arr[1]+"</div><div class='uns' onclick=mud[2].click();>已背熟的單字:"+arr[2]+"</div>";
+}
+
+function card_sort(){  //單字排序
+  user_card.card=user_card.card.sort(function (a, b) {
+   return a.en > b.en ? 1 : -1;
+  });
+}
+
+function save(){  //保存單字庫
+  localStorage.setItem("user_card",JSON.stringify(user_card));
+}
+
+function set_state(x,y){  //變更單字狀態
+  if(user_card.card[x].state==0) {
+    user_card.card[x].state=1;
+	y.children[0].classList.add("state1");
+  }
+  else if(user_card.card[x].state==1) {
+    user_card.card[x].state=2;
+	y.children[0].classList.add("state2");
+  }
+  else if(user_card.card[x].state==2) {
+    user_card.card[x].state=0;
+	y.children[0].classList.remove("state1");
+	y.children[0].classList.remove("state2");
+  }
+  card_num();
+  save();
+}
+
+function card(no,i){  //個別列出單字
+  var text="";
+  var state="";
+    if(user_card.card[i].state==1) {
+	  state="state1";
+	}
+	else if(user_card.card[i].state==2){
+	  state="state2";
+	}
+    text+="<div class='card-d'>";
+	text+="<div class='card-no'>"+no+"</div>";
+	text+="<div class='card-en'>"+user_card.card[i].en+"</div>";
+	text+="<div class='card-kk'>/"+user_card.card[i].kk+"/</div>";
+	text+="<div class='card-cn'>"+user_card.card[i].cn+"</div>";
+	text+="<div class='card-mark' onclick=set_state("+i+",this)><i class='fa fa-star c "+state+"' aria-hidden='true'></i></div>";
+	text+="<i class='fa fa-close card-x' onclick=card_de("+i+",this)></i>";
+	text+="</div>";
+	return text;
+}
+
+function all_card(){  //顯示全部單字
+  gs=0;
+  card_sort();
+  var text="";
+  for(let i in user_card.card) {
+    text+=card(Number(i)+1,i);
+  }
+  document.querySelectorAll("#card")[0].innerHTML=text;
+  add_show(0);
+}
+
+function ok_card(x){  //顯示正在背/已背熟單字
+  gs=x;
+  card_sort();
+  var no=0;
+  var text="";
+  for(let i in user_card.card) {
+    var state="";
+    if(user_card.card[i].state==1) {
+	  state="state1";
+	}
+	else if(user_card.card[i].state==2){
+	  state="state2";
+	}
+    if(user_card.card[i].state==gs) {
+	  no++;
+      text+="<div class='card-d'>";
+	  text+="<div class='card-no'>"+no+"</div>";
+	  text+="<div class='card-en'>"+user_card.card[i].en+"</div>";
+	  text+="<div class='card-kk'>/"+user_card.card[i].kk+"/</div>";
+	  text+="<div class='card-cn'>"+user_card.card[i].cn+"</div>";
+	  text+="<div class='card-mark' onclick=set_state("+i+",this)><i class='fa fa-star c "+state+"' aria-hidden='true'></i></div>";
+	  text+="<i class='fa fa-close card-x' onclick=card_de("+i+",this)></i>";
+	  text+="</div>";
+	}
+  }
+  document.querySelectorAll("#card")[0].innerHTML=text;
+  add_show(0);
+}
+
+function card_de(x,y){  //刪除單字
+  user_card.card.splice(x, 1);
+  y.parentNode.remove();
+  card_num();
+  save();
+  if(gs==0) {
+    all_card();
+  }
+  else {
+    ok_card(gs);
+  }
+}
+
+function se_card(x){  //搜尋單字
+  var len=x.length;
+  var text="";
+  var no=0;
+  for(let i in user_card.card) {
+    var c=user_card.card[i].en.slice(0,len);
+	if(c.toLowerCase()==x.toLowerCase()) {
+	  no++;
+      text+=card(no,i);
+	}
+  }
+  document.querySelectorAll("#card")[0].innerHTML=text;
+  add_show(0);  
+  for(let j=0;j<mud.length;j++) {
+	mud[j].classList.remove("on");
+  }
+}
+
+function add_show(x){  //顯示新增頁面
+  if(x==0) {
+    document.querySelectorAll("#card")[0].style.display="block";
+    document.querySelectorAll("#add")[0].style.display="none";    
+  }
+  else {
+    document.querySelectorAll("#card")[0].style.display="none";
+    document.querySelectorAll("#add")[0].style.display="block";  
+  }
+}
+
+function add_more(){  //追加單字
+  var len=document.querySelectorAll(".add-d"); 
+  var text="";
+  text+="<div class='add-d'>";
+  text+="<div class='add-d-no'>"+(Number(len.length)+1)+".</div>";
+  text+="<input type='text' class='en-v' placeholder='單字英文'/>";
+  text+="<input type='text' class='cn-v' placeholder='單字中文'/>";
+  text+="<input type='text' class='kk-v' placeholder='單字英標'/>";
+  text+="<i class='fa fa-close card-x' onclick=add_de(this)></i>";
+  text+="</div>";
+  var add=document.createElement("DIV");
+  add.innerHTML = text; 
+  document.querySelectorAll("#add-d")[0].appendChild(add);
+
+}
+
+function add_de(x) {  //刪除追加
+  x.parentNode.remove();
+}
+
+function add_ok(){  //確定新增單字
+  var en=document.querySelectorAll(".en-v");
+  var cn=document.querySelectorAll(".cn-v");
+  var kk=document.querySelectorAll(".kk-v");
+  for(let i=0;i<en.length;i++) {
+    user_card.card.push({en:en[i].value,kk:kk[i].value,cn:cn[i].value,state:0});
+  }
+  alert("新增成功");
+  mud[0].click();
+  card_num();
+  save();
+}
+
+function upload(){  //上傳單字庫
+  var x=document.getElementById('upfile').files[0];
+  if(x['type']!="application/json") {
+    alert("單字庫僅支援json格式。");
+	return 0;
+  }
+  var fr = new FileReader();
+  fr.onload = function() { 
+	upfile=JSON.parse(fr.result);
+	document.querySelectorAll("#uord-text")[0].style.display="block";
+	document.querySelectorAll("#uord-text-d")[0].innerHTML="找到"+upfile.card.length+"個單字，確定請按下加入。";
+  }
+  fr.readAsText(x);
+}
+
+function download(){  //下載單字庫
+  var json1=JSON.stringify(user_card);
+  var blob = new Blob([json1], {type: "application/json"});
+  var url  = URL.createObjectURL(blob);
+  document.body.innerHTML+="<a href='"+url+"' id='a1' download='單字庫.json'></a>";
+  document.getElementById('a1').click();
+  URL.revokeObjectURL(url);
+  document.getElementById('a1').remove();
+}
+
+function uptolo(){  //將上傳的單字庫記錄進cookie
+  for(let i=0;i<upfile.card.length;i++) {
+    user_card.card.push(upfile.card[i]);
+  }
+  open_uord(0);
+  all_card();
+  card_num();
+  save();
+}
+
+function open_uord(x){
+  if(x==0) {
+    document.querySelectorAll("#uord")[0].style.display="none";
+	document.querySelectorAll("#black")[0].style.display="none";
+  }
+  else {
+    document.querySelectorAll("#uord")[0].style.display="block";
+	document.querySelectorAll("#black")[0].style.display="block";
+  }
+}
+
+for(let i=0;i<mud.length;i++) {
+  mud[i].addEventListener("click", function(){
+    for(let j=0;j<mud.length;j++) {
+	  mud[j].classList.remove("on");
+	}
+	this.classList.add("on");
+  }, false);
+}
+all_card();
+card_num();
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
